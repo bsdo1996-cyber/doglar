@@ -57,7 +57,10 @@
       radial-gradient(circle at 85% 80%, rgba(75,36,56,0.06), transparent 45%);
     overflow:hidden;
   }
-  .hero img.logo-big{width:190px; margin:0 auto 18px;}
+  .hero img.hero-img{
+    width:100%; max-width:520px; margin:0 auto 32px;
+    border-radius:20px; box-shadow:0 24px 55px -22px rgba(75,36,56,0.40);
+  }
   .hero h1{font-size:clamp(32px,5vw,52px); max-width:760px; margin:0 auto 18px; line-height:1.15;}
   .hero p{max-width:560px; margin:0 auto 30px; font-size:17px; color:#5b4a53;}
   .hero-ctas{display:flex; gap:16px; justify-content:center; flex-wrap:wrap;}
@@ -71,8 +74,8 @@
   .btn-plum{background:var(--plum); color:#fff; box-shadow:0 8px 20px rgba(75,36,56,0.25);}
   .btn-outline{background:transparent; color:var(--plum); border-color:var(--plum);}
 
-  .paw-row{display:flex; justify-content:center; gap:14px; margin-top:56px; opacity:.55;}
-  .paw-row span{font-size:20px;}
+  .paw-row{display:flex; justify-content:center; align-items:center; gap:16px; margin-top:56px; opacity:.5;}
+  .paw-row svg{width:20px; height:20px; color:var(--plum);}
 
   /* SECTION GENERIC */
   section{padding:80px 24px;}
@@ -104,11 +107,12 @@
   .help-card:hover{box-shadow:0 16px 40px -20px rgba(75,36,56,0.25);}
   .help-card .icon{
     width:52px; height:52px; border-radius:14px; display:flex; align-items:center; justify-content:center;
-    font-size:24px; margin-bottom:18px;
+    margin-bottom:18px;
   }
-  .help-card:nth-child(1) .icon{background:rgba(42,175,192,0.14);}
-  .help-card:nth-child(2) .icon{background:rgba(75,36,56,0.10);}
-  .help-card:nth-child(3) .icon{background:rgba(42,175,192,0.14);}
+  .help-card .icon svg{width:24px; height:24px;}
+  .help-card:nth-child(1) .icon{background:rgba(42,175,192,0.14); color:var(--teal);}
+  .help-card:nth-child(2) .icon{background:rgba(75,36,56,0.10); color:var(--plum);}
+  .help-card:nth-child(3) .icon{background:rgba(42,175,192,0.14); color:var(--teal);}
   .help-card h3{font-size:19px; margin-bottom:10px;}
   .help-card p{color:#6b5b63; font-size:15px;}
 
@@ -148,14 +152,6 @@
   .pix-copy:hover{filter:brightness(1.08);}
   .pix-note{margin-top:16px; font-size:13px; color:#c9b7c1;}
 
-  /* GALLERY */
-  .gallery-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
-  .gallery-grid .g-item{
-    border-radius:16px; overflow:hidden; aspect-ratio:1/1;
-    background:var(--bg-soft); display:flex; align-items:center; justify-content:center;
-  }
-  .gallery-grid .g-item img{width:100%; height:100%; object-fit:cover;}
-
   /* FOOTER */
   footer{background:var(--bg-soft); border-top:1px solid var(--line); padding:56px 24px 30px;}
   .footer-grid{display:grid; grid-template-columns:1.2fr 1fr 1fr; gap:40px; margin-bottom:40px;}
@@ -177,8 +173,10 @@
     .about-grid{grid-template-columns:1fr;}
     .about-grid h2, .about-grid p{text-align:left;}
     .help-grid{grid-template-columns:1fr;}
-    .gallery-grid{grid-template-columns:1fr 1fr;}
     .footer-grid{grid-template-columns:1fr;}
+    .pix-box{flex-direction:column; align-items:stretch; padding:20px;}
+    .pix-key{width:100%; min-width:0; text-align:center; word-break:break-all;}
+    .pix-copy{width:100%;}
   }
 </style>
 </head>
@@ -202,14 +200,18 @@
 </header>
 
 <section class="hero">
-  <img src="images/logo.png" alt="DogLar" class="logo-big">
+  <img src="images/banner-adocao.png" alt="Não compre, adote" class="hero-img">
   <h1>Um lar de amor para quem já sofreu demais</h1>
   <p>A DogLar é uma associação voluntária de proteção animal em Carmópolis de Minas, cuidando de cães resgatados e conectando eles a famílias que vão amá-los para sempre.</p>
   <div class="hero-ctas">
     <a href="#doar" class="btn btn-teal">Quero doar</a>
     <a href="#adocao" class="btn btn-outline">Quero adotar</a>
   </div>
-  <div class="paw-row"><span>🐾</span><span>🐾</span><span>🐾</span><span>🐾</span><span>🐾</span></div>
+  <div class="paw-row">
+    <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="7" cy="7" r="2.3"/><circle cx="12.3" cy="5.2" r="2.1"/><circle cx="17.2" cy="7" r="2.3"/><path d="M12 10c-3.2 0-6 2.4-6 5.4 0 1.6 1.2 2.9 2.7 2.9.9 0 1.5-.4 2.2-.8.5-.3 1-.6 1.6-.6s1.1.3 1.6.6c.7.4 1.3.8 2.2.8 1.5 0 2.7-1.3 2.7-2.9 0-3-2.8-5.4-6-5.4z"/></svg>
+    <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="7" cy="7" r="2.3"/><circle cx="12.3" cy="5.2" r="2.1"/><circle cx="17.2" cy="7" r="2.3"/><path d="M12 10c-3.2 0-6 2.4-6 5.4 0 1.6 1.2 2.9 2.7 2.9.9 0 1.5-.4 2.2-.8.5-.3 1-.6 1.6-.6s1.1.3 1.6.6c.7.4 1.3.8 2.2.8 1.5 0 2.7-1.3 2.7-2.9 0-3-2.8-5.4-6-5.4z"/></svg>
+    <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="7" cy="7" r="2.3"/><circle cx="12.3" cy="5.2" r="2.1"/><circle cx="17.2" cy="7" r="2.3"/><path d="M12 10c-3.2 0-6 2.4-6 5.4 0 1.6 1.2 2.9 2.7 2.9.9 0 1.5-.4 2.2-.8.5-.3 1-.6 1.6-.6s1.1.3 1.6.6c.7.4 1.3.8 2.2.8 1.5 0 2.7-1.3 2.7-2.9 0-3-2.8-5.4-6-5.4z"/></svg>
+  </div>
 </section>
 
 <section class="about" id="sobre">
@@ -239,17 +241,17 @@
     <p class="section-sub">Cada gesto conta. Existem várias formas de fazer parte da rede de proteção da DogLar.</p>
     <div class="help-grid">
       <div class="help-card">
-        <div class="icon">💚</div>
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20.5s-7.5-4.6-9.8-9.3C.6 7.9 2.2 4.5 5.6 4c2.1-.3 3.9.8 6.4 3.1C14.5 4.8 16.3 3.7 18.4 4c3.4.5 5 3.9 3.4 7.2C19.5 15.9 12 20.5 12 20.5z"/></svg></div>
         <h3>Doe via Pix</h3>
         <p>Sua contribuição ajuda a comprar ração, medicamentos e tudo que os animais precisam no dia a dia.</p>
       </div>
       <div class="help-card">
-        <div class="icon">🏡</div>
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v9a1 1 0 0 0 1 1H17.5a1 1 0 0 0 1-1v-9"/><path d="M9.5 20v-5.5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1V20"/></svg></div>
         <h3>Adote um cão</h3>
         <p>Conheça os cães disponíveis para adoção e dê a eles a chance de uma vida cheia de carinho.</p>
       </div>
       <div class="help-card">
-        <div class="icon">🙌</div>
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="3.2"/><path d="M4.5 20c0-3.6 3.4-6.2 7.5-6.2s7.5 2.6 7.5 6.2"/></svg></div>
         <h3>Seja voluntário</h3>
         <p>Ajude no resgate, nos cuidados diários ou na divulgação das nossas ações. Entre em contato.</p>
       </div>
@@ -267,18 +269,6 @@
         <button class="pix-copy" id="pixCopyBtn" onclick="copyPix()">Copiar chave Pix</button>
       </div>
       <p class="pix-note">Chave Pix: CNPJ da DogLar — Associação Carmopolitana de Proteção aos Animais</p>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <h2 class="section-title">Nossos amigos</h2>
-    <p class="section-sub">Um pouquinho do carinho que cuidamos todos os dias.</p>
-    <div class="gallery-grid">
-      <div class="g-item"><img src="images/banner-doacao.png" alt="Cãozinho da DogLar"></div>
-      <div class="g-item"><img src="images/banner-adocao.png" alt="Cãozinho para adoção"></div>
-      <div class="g-item"><img src="images/logo.png" alt="Logo DogLar" style="object-fit:contain; background:#fff; padding:30px;"></div>
     </div>
   </div>
 </section>
@@ -307,7 +297,7 @@
       </ul>
     </div>
   </div>
-  <div class="footer-bottom">© 2026 DogLar — Associação Carmopolitana de Proteção aos Animais. Feito com 🐾 e muito amor.</div>
+  <div class="footer-bottom">© 2026 DogLar — Associação Carmopolitana de Proteção aos Animais. Feito com muito amor.</div>
 </footer>
 
 <script>
