@@ -122,7 +122,7 @@
     color:#fff;
     border-radius:28px;
     margin:0 24px;
-    padding:64px 40px;
+    padding:0 0 44px;
     text-align:center;
     position:relative;
     overflow:hidden;
@@ -133,6 +133,7 @@
     background:radial-gradient(circle at 80% 20%, rgba(42,175,192,0.25), transparent 55%);
   }
   .donate > *{position:relative;}
+  .donate-img{width:100%; display:block;}
   .donate h2{color:#fff; font-size:32px; margin-bottom:14px;}
   .donate p{color:#e6d9df; max-width:520px; margin:0 auto 34px;}
   .pix-box{
@@ -237,7 +238,7 @@
 </section>
 
 <section class="adopt" id="adocao">
-  <img src="images/banner-adocao.png" alt="Não compre, adote">
+  <!-- imagem nova a ser enviada -->
 </section>
 
 <section id="ajudar">
@@ -267,8 +268,8 @@
 <section id="doar">
   <div class="wrap">
     <div class="donate">
-      <h2>Ajude a manter nossa missão</h2>
-      <p>Todo valor doado é revertido em ração, alimentos, cuidados veterinários e tudo o que nossos amigos de quatro patas precisam. Copie a chave Pix abaixo e faça sua doação direto pelo app do seu banco.</p>
+      <img class="donate-img" src="images/banner-doacao.png" alt="Ajude a manter nossa missão">
+      <p style="margin-top:36px;">Copie a chave Pix abaixo e faça sua doação direto pelo app do seu banco.</p>
       <div class="pix-box">
         <div class="pix-key" id="pixKey">18.736.738/0001-87</div>
         <button class="pix-copy" id="pixCopyBtn" onclick="copyPix()">Copiar chave Pix</button>
